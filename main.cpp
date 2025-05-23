@@ -1,17 +1,32 @@
 #include <iostream>
+#include <string>
 
 #include "sum.h"
 #include "sub.h"
 #include "div.h"
 #include "mult.h"
+#include "operacion.h"
 
 using std::cout;
+using std::string;
+
+void calculoOperacion(Operacion* op, float a, float b, string operacion) {
+    cout << operacion << " = " << op->calcular(a, b) << '\n';
+}
 
 int main() {
+    float floatA = 10;
+    float floatB = 2;
 
-    std::cout << "sum(1, 5) = " << sum(1, 5) << '\n';
-    std::cout << "sub(5, 1) = " << sub(5, 1) << '\n';
-    std::cout << "div(9, 3) = " << divide(9, 3) << '\n';
-    std::cout << "mult(12, 2) = " << mult(12, 2) << '\n';
+    Sum sum;
+    Sub sub;
+    Div divide;
+    Mult mult;
+
+    calculoOperacion(&sum, floatA, floatB, "Suma");
+    calculoOperacion(&sub, floatA, floatB, "Resta");
+    calculoOperacion(&divide, floatA, floatB, "División");
+    calculoOperacion(&mult, floatA, floatB, "Multiplicación");
+
     return 0;
 }

@@ -1,4 +1,5 @@
-
+#ifndef SUM_H
+#define SUM_H
 
 /*
  * Copyright (C) 2025 Tec de Monterrey
@@ -10,11 +11,17 @@
 
 #include <math.h>
 #include <stdexcept>
+#include "operacion.h"
 
 /**
   metodo para realizar sumas de dos numeros
  */
-double sum(int x, int y)
-{
-    return x + y;
-}
+
+class Sum : public Operacion{
+public:
+    float calcular(float a, float b) override {
+        return a + b;
+    }
+};
+
+#endif

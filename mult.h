@@ -1,3 +1,5 @@
+#ifndef MULT_H
+#define MULT_H
 
 /*
  * Copyright (C) 2025 Tec de Monterrey
@@ -9,11 +11,18 @@
 
 #include <math.h>
 #include <stdexcept>
+#include "operacion.h"
+
 
 /**
   metodo para realizar multipicación de dos numeros
  */
-double mult(int x, int y)
-{
-    return x * y;
-}
+
+class Mult : public Operacion{
+    public:
+        float calcular(float a, float b) override{
+          return a * b;
+        }
+};
+
+#endif

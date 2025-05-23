@@ -1,4 +1,5 @@
-
+#ifndef SUB_H
+#define SUB_H
 /*
  * Copyright (C) 2025 Tec de Monterrey
  *
@@ -9,11 +10,17 @@
 
 #include <math.h>
 #include <stdexcept>
+#include "operacion.h"
 
 /**
   metodo para realizar restas de dos numeros
  */
-double sub(int x, int y)
-{
-    return x - y;
-}
+
+class Sub : public Operacion {
+public:
+  float calcular(float a, float b) override {
+    return a - b;
+  }  
+};
+
+#endif

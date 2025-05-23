@@ -1,3 +1,5 @@
+#ifndef DIV_H
+#define DIV_H
 
 /*
  * Copyright (C) 2025 Tec de Monterrey
@@ -9,14 +11,21 @@
 
 #include <math.h>
 #include <stdexcept>
+#include "operacion.h"
 
 /**
   metodo para realizar divisiones de dos numeros
  */
-double divide(int x, int y)
-{
-    if (y != 0)
-        return x / y;
-    else
-        return 0;
-}
+
+class Div : public Operacion{
+public:
+    float calcular(float a, float b) override {
+        if (b != 0)
+            return a / b;
+        else
+            return 0;
+    }
+};
+
+
+#endif
